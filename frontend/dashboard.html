@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Health Dashboard - Platform analytics and health assessment metrics" />
+  <meta name="theme-color" content="#0891b2" />
+  <title>Dashboard - TEAM IGRIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        TEAM IGRIS
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-section">
+
+    <!-- Page Header -->
+    <div class="anim-fade-up">
+      <h1 class="page-title">Dashboard</h1>
+      <p class="page-subtitle">Overview of platform analytics and health assessment metrics.</p>
+      <div class="card anim-fade-up" style="padding:1.5rem; margin-bottom:2rem;">
+      <h2 style="margin-bottom:0.75rem;">Project Overview</h2>
+      <p style="color:var(--muted); line-height:1.7;">
+        This AI-powered triage system combines a rule-based emergency detection 
+        engine with a trained Random Forest classification model to predict 
+        patient risk levels (Low, Medium, High).
+        
+        High-risk cases are immediately overridden using medical safety rules,
+        while moderate and low-risk cases receive AI-generated structured 
+        recommendations.
+      </p>
+     </div>
+
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+    
+
+      <div class="stat-card anim-fade-up anim-delay-2">
+        <div class="stat-icon">
+          <!-- TrendingUp icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div>
+          <p class="stat-label">Accuracy Rate</p>
+          <p class="stat-value" data-count="95" data-suffix="%">0%</p>
+        </div>
+      </div>
+    
+
+  </main>
+
+  <footer class="footer">
+    &copy; 2026 TEAM IGRIS. All rights reserved. This is a demo.
+  </footer>
+
+  <script>
+    // Mobile nav
+    document.getElementById('hamburger').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Count-up animation
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'));
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1800;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(eased * target);
+        el.textContent = current.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    });
+  </script>
+
+</body>
+</html>

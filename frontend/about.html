@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About AI Health - Building the future of intelligent healthcare" />
+  <meta name="theme-color" content="#0891b2" />
+  <title>About Us - TEAM IGRIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        TEAM IGRIS
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-section">
+
+    <!-- About Hero -->
+    <div class="about-hero anim-fade-up">
+      <h1>About TEAM IGRIS</h1>
+      <p>
+        We are building the future of intelligent healthcare, combining clinical expertise
+        with artificial intelligence to make medical assessments faster, more accessible, and more accurate.
+      </p>
+    </div>
+
+      <!-- ========== TEAM SECTION ========== -->
+<h2 class="values-title anim-fade-up">Meet Our Team</h2>
+
+<div class="team-grid">
+
+  <div class="team-card anim-fade-up">
+    <div><img class="team-avatar" src="https://media.licdn.com/dms/image/v2/D5603AQF5BC2GL3L0Bw/profile-displayphoto-scale_200_200/B56ZoXZj8RJYAY-/0/1761329171032?e=2147483647&v=beta&t=szFa3c9VailXgR-AJVosPGmELAcmwkal4kNqBjb_dtM"></div>
+    <h3>KRISTHU RAJU</h3>
+    <p class="team-role">Backend Developer</p>
+    <div class="team-links">
+      <a href="https://www.linkedin.com/in/kristhuraju" target="_blank">LinkedIn</a>
+      <a href="https://github.com/rajukonda767" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div class="team-card anim-fade-up anim-delay-1">
+    <div class="team-avatar"></div>
+    <h3>PADMARAJU</h3>
+    <p class="team-role">Frontend Developer</p>
+    <div class="team-links">
+      <a href="https://www.linkedin.com/in/padmaraju-86a12730b/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/rajukonda767" target="_blank">GitHub</a>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+  </main>
+  <footer class="footer">
+    &copy; TEAM IGRIS. All rights reserved. This is a demo.
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>
