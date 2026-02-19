@@ -4,8 +4,6 @@ import joblib
 import numpy as np
 import os
 import requests
-import warnings
-from google import genai
 
 # ===============================
 # Flask Setup
