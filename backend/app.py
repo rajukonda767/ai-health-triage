@@ -16,15 +16,7 @@ CORS(app)
 # ===============================
 model = joblib.load("rf_model.pkl")
 
-
-client = genai.Client(
-    api_key="AIzaSyCWxuogL0F_5Tx38oTpBtvzQCj6_6Jx7Js",
-    http_options={
-        "api_version": "v1"
-    }
-)
-
-
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 # ===============================
 # High Risk Rule Engine
 # ===============================
@@ -85,7 +77,7 @@ Keep total under 100 words.
         response = requests.post(
             "https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
                 "Content-Type": "application/json"
             },
             json={
