@@ -87,18 +87,22 @@ Keep total under 100 words.
                 ]
             }
         )
-
+    
+        print("OpenRouter Status:", response.status_code)
+        print("OpenRouter Response:", response.text)
+    
         result = response.json()
-        return result["choices"][0]["message"]["content"]
+    
+        if "choices" in result:
+            return result["choices"][0]["message"]["content"]
+        else:
+            print("OpenRouter Error:", result)
+            return "LLM API failed."
 
     except Exception as e:
-        print("LLM Error:", e)
-        return (
-            "Rest well and stay hydrated.\n"
-            "Monitor your symptoms closely.\n"
-            "Avoid physical strain.\n\n"
-            "**If symptoms worsen, consult a doctor immediately.**"
-        )
+        print("LLM Exception:", e)
+        return "LLM crashed."
+
 
 
 
