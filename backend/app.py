@@ -17,6 +17,8 @@ CORS(app)
 model = joblib.load("rf_model.pkl")
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+print("OPENROUTER_API_KEY =", OPENROUTER_API_KEY)
+
 # ===============================
 # High Risk Rule Engine
 # ===============================
